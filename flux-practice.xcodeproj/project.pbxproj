@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		016410E9485C38A08FD82D01 /* Pods_flux_practice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDCC36CD415B2553EBB326AD /* Pods_flux_practice.framework */; };
 		D4D59A812181F3DD009C1861 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D59A802181F3DD009C1861 /* AppDelegate.swift */; };
 		D4D59A832181F3DD009C1861 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D59A822181F3DD009C1861 /* ViewController.swift */; };
 		D4D59A862181F3DD009C1861 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4D59A842181F3DD009C1861 /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		57EA7DA565FBBAAE77DB63A8 /* Pods-flux-practice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flux-practice.release.xcconfig"; path = "Pods/Target Support Files/Pods-flux-practice/Pods-flux-practice.release.xcconfig"; sourceTree = "<group>"; };
+		96EE92D4F921A90EA32BE504 /* Pods-flux-practice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flux-practice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-flux-practice/Pods-flux-practice.debug.xcconfig"; sourceTree = "<group>"; };
+		CDCC36CD415B2553EBB326AD /* Pods_flux_practice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_flux_practice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4D59A7D2181F3DD009C1861 /* flux-practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "flux-practice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4D59A802181F3DD009C1861 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4D59A822181F3DD009C1861 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				016410E9485C38A08FD82D01 /* Pods_flux_practice.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7285FB4AE9AFE67C4E29503F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CDCC36CD415B2553EBB326AD /* Pods_flux_practice.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D4D59A742181F3DD009C1861 = {
 			isa = PBXGroup;
 			children = (
 				D4D59A7F2181F3DD009C1861 /* flux-practice */,
 				D4D59A7E2181F3DD009C1861 /* Products */,
+				F194B5FAAB04D632B72B2E46 /* Pods */,
+				7285FB4AE9AFE67C4E29503F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +79,15 @@
 			path = "flux-practice";
 			sourceTree = "<group>";
 		};
+		F194B5FAAB04D632B72B2E46 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				96EE92D4F921A90EA32BE504 /* Pods-flux-practice.debug.xcconfig */,
+				57EA7DA565FBBAAE77DB63A8 /* Pods-flux-practice.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D4D59A8F2181F3DE009C1861 /* Build configuration list for PBXNativeTarget "flux-practice" */;
 			buildPhases = (
+				2542ED5CD5DF71B0FACA5A6A /* [CP] Check Pods Manifest.lock */,
 				D4D59A792181F3DD009C1861 /* Sources */,
 				D4D59A7A2181F3DD009C1861 /* Frameworks */,
 				D4D59A7B2181F3DD009C1861 /* Resources */,
+				333556E5A533B6575EC00502 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,55 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2542ED5CD5DF71B0FACA5A6A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-flux-practice-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		333556E5A533B6575EC00502 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-flux-practice/Pods-flux-practice-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-flux-practice/Pods-flux-practice-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D4D59A792181F3DD009C1861 /* Sources */ = {
@@ -278,6 +353,7 @@
 		};
 		D4D59A902181F3DE009C1861 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96EE92D4F921A90EA32BE504 /* Pods-flux-practice.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -295,6 +371,7 @@
 		};
 		D4D59A912181F3DE009C1861 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57EA7DA565FBBAAE77DB63A8 /* Pods-flux-practice.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
