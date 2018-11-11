@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9ED9168F38DD42D456E60F286B5528BB"
+               BlueprintIdentifier = "DB8768A1A1D96CCF2AA57E5CDBE91A4C"
                BuildableName = "Pods_flux_practice.framework"
                BlueprintName = "Pods-flux-practice"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9ED9168F38DD42D456E60F286B5528BB"
+            BlueprintIdentifier = "DB8768A1A1D96CCF2AA57E5CDBE91A4C"
             BuildableName = "Pods_flux_practice.framework"
             BlueprintName = "Pods-flux-practice"
             ReferencedContainer = "container:Pods.xcodeproj">

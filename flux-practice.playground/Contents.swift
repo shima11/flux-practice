@@ -21,11 +21,11 @@ class APIManager {
 
 class Request {
 
-    static let baseURL: URL = .init(string: "https://")
+    static let baseURL = URL(string: "https://")
     
     func name() -> URLRequest {
         let url = Request.baseURL
-        return URLRequest(url: url)
+        return URLRequest(url: url!)
     }
     
 }
