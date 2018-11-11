@@ -22,21 +22,33 @@ class Store {
     
     static let shared = Store(state: .init())
     
-    struct State {
-        
-    }
-    
     // TODO: state -> view binding
 
-    private let state: State
+    private var changeState: ((State) -> Void)? = nil
+    
+    private var state: State {
+        didSet {
+            changeState?(state)
+        }
+    }
     
     init(state: State) {
         self.state = state
     }
+    
+    func setHandler(handler: @escaping (State) -> Void ) {
+        self.changeState = handler
+    }
+    
+    func commit(action: Action) {
+        self.state = Reducer.reduce(action: action)
+    }
 }
 
+struct State { }
+
 class Reducer {
-    static func reduce(action: Action) -> Store.State {
+    static func reduce(action: Action) -> State {
         return .init()
     }
 }
@@ -44,13 +56,15 @@ class Reducer {
 // MARK: Dispatcher
 
 class Dispatcher {
-    
+    func dispatch(action: Action) {
+        
+    }
 }
 
 // MARK: Action
 
 enum Action {
-    
+    case tapButton
 }
 
 
@@ -75,7 +89,21 @@ class Request {
 
 // MARK: Service Layer
 
-class Service {
+protocol Service {}
+
+class LoggedOutService: Service {
+    func registration() -> Bool {
+        return false
+    }
+}
+
+class AppointmentService: Service {
+    func fetchUsers() -> [String] {
+        return []
+    }
+}
+
+class DerriveryService: Service {
     func fetchUsers() -> [String] {
         return []
     }
@@ -84,15 +112,47 @@ class Service {
 
 // MARK: View Layer
 
-class ViewController: UIViewController {
+class WelcomeViewModel {
     
+    let service: LoggedOutService
+    
+    let state = Store.shared
+    let dispatcher = Dispatcher()
+    
+    init(service: LoggedOutService) {
+        self.service = service
+    }
+    
+    func fetch() {
+        let action = Action.tapButton
+        dispatcher.dispatch(action: action)
+    }
 }
 
-class ViewModel {
+class WelcomeViewController: UIViewController {
     
+    private let viewModel: WelcomeViewModel
+    
+    private let hogeView = HogeView()
+    
+    init(viewModel: WelcomeViewModel) {
+        self.viewModel = viewModel
+        super.init()
+        
+        viewModel.state.setHandler(handler: { state in
+            
+        })
+    }
+    
+    func didTap() {
+        
+    }
 }
 
 class HogeView {
     
 }
 
+
+let vc = WelcomeViewController(viewModel: .init(service: .init()))
+vc.didTap()
