@@ -19,6 +19,7 @@
 		57EA7DA565FBBAAE77DB63A8 /* Pods-flux-practice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flux-practice.release.xcconfig"; path = "Pods/Target Support Files/Pods-flux-practice/Pods-flux-practice.release.xcconfig"; sourceTree = "<group>"; };
 		96EE92D4F921A90EA32BE504 /* Pods-flux-practice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flux-practice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-flux-practice/Pods-flux-practice.debug.xcconfig"; sourceTree = "<group>"; };
 		CDCC36CD415B2553EBB326AD /* Pods_flux_practice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_flux_practice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4510F0121983316004BE036 /* flux-practice.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "flux-practice.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		D4D59A7D2181F3DD009C1861 /* flux-practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "flux-practice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4D59A802181F3DD009C1861 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4D59A822181F3DD009C1861 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +52,7 @@
 		D4D59A742181F3DD009C1861 = {
 			isa = PBXGroup;
 			children = (
+				D4510F0121983316004BE036 /* flux-practice.playground */,
 				D4D59A7F2181F3DD009C1861 /* flux-practice */,
 				D4D59A7E2181F3DD009C1861 /* Products */,
 				F194B5FAAB04D632B72B2E46 /* Pods */,
