@@ -1,6 +1,10 @@
 import Foundation
 
-class UIViewController {}
+class UIViewController { }
+class Lock {
+    func lock() {}
+    func unlock() {}
+}
 
 // MARK: Routing
 
@@ -21,6 +25,8 @@ class Router {
 class Store {
     
     static let shared = Store(state: .init())
+
+    private let lock = Lock()
     
     // TODO: state -> view binding
 
@@ -40,15 +46,29 @@ class Store {
         self.changeState = handler
     }
     
-    func commit(action: Action) {
-        self.state = Reducer.reduce(action: action)
+//    func commit(action: Action) {
+//        self.state = Reducer.reduce(action: action)
+//    }
+    
+    func commit(mutate: (State) -> Void) {
+        
+        // lock or dispatch queue
+        
+        lock.lock()
+        defer {
+            lock.unlock()
+        }
+        
+        mutate(state)
     }
 }
 
 struct State { }
 
 class Reducer {
+    
     static func reduce(action: Action) -> State {
+        
         return .init()
     }
 }
